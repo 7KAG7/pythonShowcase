@@ -1,3 +1,4 @@
+import logging
 # set the setpoint temperature to 33
 def setpoint_temperature():
     return 33   
@@ -44,14 +45,14 @@ class TempCheck:
     def main():
         current_temp = read_temperature_from_controller()
         if TempCheck.low_temp_warning(current_temp):
-            print("Low Temp Warning")
+            logging.warning("Low Temp Warning")
         if TempCheck.low_temp_alarm(current_temp):
-            print("Low Temp Alarm")
+            logging.warning("Low Temp Alarm")
         if TempCheck.low_temp_shutdown(current_temp):
-            print("Low Temp Shutdown")
+            logging.warning("Low Temp Shutdown")
         if TempCheck.high_temp_warning(current_temp):
-            print("High Temp Warning")
+            logging.warning("High Temp Warning")
         if TempCheck.high_temp_alarm(current_temp):
-            print("High Temp Alarm")
+            logging.warning("High Temp Alarm")
         if TempCheck.high_temp_shutdown(current_temp):
-            print("High Temp Shutdown")
+            logging.warning("High Temp Shutdown")
